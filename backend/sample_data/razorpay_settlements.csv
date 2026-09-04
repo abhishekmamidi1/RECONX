@@ -1,0 +1,7 @@
+settlement_id,settlement_date,payment_id,order_id,customer_ref,amount,fee,tax,credit_amount,status,method
+setl_Nx1001,2026-08-01,pay_Aa1b2C3d4,ord_Q1w2E3r4,CUST-1001,12500.00,37.50,6.75,12455.75,processed,upi
+setl_Nx1001,2026-08-01,pay_Bb2c3D4e5,ord_W2e3R4t5,CUST-1002,4800.00,14.40,2.59,4783.01,processed,card
+setl_Nx1002,2026-08-03,pay_Cc3d4E5f6,ord_E3r4T5y6,CUST-1003,15750.00,47.25,8.51,15694.24,processed,netbanking
+setl_Nx1002,2026-08-04,pay_Dd4e5F6g7,ord_R4t5Y6u7,CUST-1004,2300.00,6.90,1.24,2291.86,processed,upi
+setl_Nx1003,2026-08-06,pay_Ee5f6G7h8,ord_T5y6U7i8,CUST-1005,98760.00,296.28,53.33,98410.39,processed,card
+setl_Nx1003,2026-08-06,pay_Ff6g7H8i9,ord_Y6u7I8o9,CUST-1006,"1,250.00",3.75,0.68,"1,245.57",processed,wallet

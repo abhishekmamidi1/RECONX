@@ -1,0 +1,8 @@
+settlement_id,settlement_date,payment_id,utr,order_id,customer_ref,amount,fee,tax,credit_amount,status,method,description
+setl_Nx2001,2026-08-15,pay_Gg7h8I9j,UTR888170260810,,,5000.00,50.00,9.00,4941.00,processed,,
+setl_Nx2002,2026-08-16,pay_Hh8i9J0k,UTR888170260811,,,7500.50,75.01,13.50,7411.99,processed,,
+setl_Nx2003,2026-08-16,pay_Ii9j0K1l,UTR888170260812,,,3200.00,32.00,5.76,3162.24,processed,,
+setl_Nx2004,2026-08-17,pay_Jj0k1L2m,UTR888170260813,,,12000.00,120.00,21.60,11858.40,processed,,
+setl_Nx2005,2026-08-18,pay_Kk1l2M3n,UTR888170260814,,,950.25,9.50,1.71,939.04,processed,,
+setl_Nx3001,2026-08-20,pay_Sm1Th1cA,,,,4500.00,75.00,5.00,4420.00,processed,,UPI collection from Arvind Kumar Enterprises against August trade supplies invoice
+setl_Nx3002,2026-08-21,pay_Pl4tFrmZ,,,,2500.00,5.00,0.90,2494.10,processed,,Wallet top-up adjustment processed through platform credits batch

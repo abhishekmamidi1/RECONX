@@ -1,0 +1,38 @@
+# secrets / env
+.env
+.env.local
+*.pem
+
+# separate project accidentally nested here (has its own git repo)
+BuildRecover/
+
+# runtime/generated FAISS semantic-index artifacts — rebuilt on demand from
+# the transactions table (app/services/semantic/index.py); sample/seed data
+# lives in backend/sample_data/ and IS tracked
+backend/data/
+*.faiss
+*.faiss.meta.json
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+
+# node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# misc
+.DS_Store
+Thumbs.db
+*.log
+.coverage
+htmlcov/
+.idea/
+.vscode/

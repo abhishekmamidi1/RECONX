@@ -1,0 +1,3 @@
+invoice_no,txn_date,order_id,payment_ref,amount,tax,status,customer_code
+INV-2026-0701,2026-08-01,ord_Q1w2E3r4,pay_Aa1b2C3d4,12500.00,2250.00,PAID,CUST-1001
+INV-2026-0708,2026-08-08,ord_Q1w2E3r4,,1200.00,0.00,REFUNDED,CUST-1001

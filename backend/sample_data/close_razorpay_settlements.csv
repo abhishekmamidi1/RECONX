@@ -1,0 +1,24 @@
+settlement_id,settlement_date,payment_id,utr,order_id,customer_ref,amount,fee,tax,credit_amount,status,method,description
+setl_Sep01,2026-09-02,pay_cL9qW2mN0,UTR88909260001,,,5100.00,15.30,2.75,5081.95,processed,upi,
+setl_Sep02,2026-09-02,pay_cL9qW2mN1,UTR88909260002,,,2775.00,8.33,1.50,2765.17,processed,upi,
+setl_Sep03,2026-09-03,pay_cL9qW2mN2,UTR88909260003,,,9420.75,28.26,5.09,9387.40,processed,card,
+setl_Sep04,2026-09-04,pay_cL9qW2mN3,UTR88909260004,,,6350.00,19.05,3.43,6327.52,processed,netbanking,
+setl_Sep05,2026-09-05,pay_cL9qW2mN4,UTR88909260005,,,15250.00,45.75,8.24,15196.01,processed,upi,
+setl_Sep06,2026-09-06,pay_cL9qW2mN5,UTR88909260006,,,3280.40,9.84,1.77,3268.79,processed,wallet,
+setl_Sep07,2026-09-08,pay_cL9qW2mN6,UTR88909260007,,,11455.20,34.37,6.19,11414.64,processed,card,
+setl_Sep08,2026-09-09,pay_cL9qW2mN7,UTR88909260008,,,8640.50,25.92,4.67,8609.91,processed,upi,
+setl_Sep09,2026-09-10,pay_cL9qW2mN8,UTR88909260009,,,1990.00,5.97,1.07,1982.96,processed,wallet,
+setl_Sep10,2026-09-11,pay_cL9qW2mN9,UTR88909260010,,,7200.00,21.60,3.89,7174.51,processed,upi,
+setl_SepF1,2026-09-12,pay_fzQ3r8T5a,UTR889092600F1,,,5800.00,17.40,3.13,5779.47,processed,upi,
+setl_SepF2,2026-09-12,pay_fzQ3r8T5b,UTR889092600F2,,,12100.00,36.30,6.53,12057.17,processed,upi,
+setl_SepE1,2026-09-15,pay_eo7Q2t9X1,UTR889092600E1,,,4600.00,13.80,2.48,4583.72,processed,upi,
+setl_SepE2,2026-09-16,pay_eo7Q2t9X2,UTR889092600E2,,,9935.50,29.81,5.37,9900.32,processed,card,
+setl_SepM1,2026-09-18,pay_mx0K9p3Z1,UTR889092600M1,,,7200.50,21.60,3.89,7175.01,processed,upi,
+setl_SepS01,2026-09-20,pay_smK0lP2qR,,,,4500.00,75.00,5.00,4420.00,processed,upi,UPI collection from Arvind Kumar Enterprises against August trade supplies invoice
+setl_SepS02,2026-09-21,pay_plM4nR6qT,,,,2500.00,5.00,0.90,2494.10,processed,wallet,Wallet top-up adjustment processed through platform credits batch
+setl_SepS03,2026-09-23,pay_mA9c3F5x1,,,,8000.00,320.00,80.00,7600.00,processed,upi,September freight premium receivable against Spectra Logistics contracted dispatch services
+setl_SepR01,2026-09-22,pay_rf9X7a4B2,UTR889092600R2,,,-1800.00,0.00,0.00,-1800.00,refunded,upi,
+setl_SepA1,2026-09-24,pay_ag2P9c6X1,,,,3200.00,9.60,1.73,3188.67,processed,upi,
+setl_SepA2,2026-09-24,pay_ag2P9c6X2,,,,4100.00,12.30,2.21,4085.49,processed,upi,
+setl_SepA3,2026-09-24,pay_ag2P9c6X3,,,,2700.00,8.10,1.46,2690.44,processed,upi,
+setl_SepQ1,2026-09-25,pay_dq1W3e5R7,UTR889092600D9,,,620.00,1.86,0.33,617.81,processed,upi,

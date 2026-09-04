@@ -1,0 +1,7 @@
+invoice_no,txn_date,order_id,payment_ref,amount,tax,status,customer_code,description
+INV-2026-0710,2026-08-15,ORD-0710,pay_Gg7h8I9j,5000.00,,paid,,
+INV-2026-0711,2026-08-16,ORD-0711,pay_Hh8i9J0k,7500.50,,paid,,
+INV-2026-0712,2026-08-16,ORD-0712,pay_Ii9j0K1l,3200.00,,paid,,
+INV-2026-0714,2026-08-18,ORD-0714,pay_Kk1l2M3n,950.25,,paid,,
+INV-2026-0720,2026-08-20,ORD-0720,,4500.00,,paid,,Arvind Kumar Enterprises trade supplies for August billed under annual rate card
+INV-2026-0721,2026-08-21,ORD-0721,,2495.00,,paid,,Platform credits settlement queue monthly subscription charge

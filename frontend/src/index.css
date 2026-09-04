@@ -1,0 +1,374 @@
+@import "tailwindcss";
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Theme tokens — single source of truth for light & dark.
+   The <html> element carries data-theme="dark" | "light" (set by the
+   pre-paint script + ThemeToggle). Tailwind v4 utilities resolved via
+   `@theme inline` read these variables, so a flip on <html> restyles
+   everything automatically.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --canvas: #060a13;
+  --surface: #0b111e;
+  --raised: #101827;
+  --hairline: #1c2740;
+  --hairline-heavy: #26324f;
+  --foreground: #f8fafc;
+  --gloss: rgba(255, 255, 255, 0.045);
+  --gloss-strong: rgba(255, 255, 255, 0.075);
+  --overlay: rgba(2, 6, 23, 0.62);
+  --muted: #64748b;
+  --human: #a78bfa;
+  --human-ink: #ede9fe;
+  --chart-fuzzy: #e879f9;
+  --chart-ai: #7c3aed;
+  --scroll-thumb: #24304a;
+  --scroll-thumb-hover: #31405f;
+
+  /* Card hover lift — a deep, short shadow so interactive cards gain depth
+     without either washing out in light mode or feeling heavy in dark. */
+  --lift-shadow: 0 12px 32px -16px rgba(2, 6, 23, 0.65);
+
+  /* Skeleton shimmer travels a light edge in either theme. */
+  --shimmer: rgba(255, 255, 255, 0.075);
+
+  /* Ambient backdrop */
+  --ambient-a: rgba(124, 58, 237, 0.1);
+  --ambient-b: rgba(34, 197, 94, 0.07);
+  --ambient-c: rgba(56, 189, 248, 0.05);
+  --ambient-dots: rgba(255, 255, 255, 0.022);
+
+  /* Semantic palette — all ≥4.5:1 on the dark canvas */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --critical: #fb7185;
+  --info: #38bdf8;
+  --source-bank: #60a5fa;
+  --source-erp: #a78bfa;
+  --source-razorpay: #06b6d4;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Surfaces */
+  --canvas: #f6f7fa;
+  --surface: #ffffff;
+  --raised: #eef1f6;
+  --hairline: #e3e7ee;
+  --hairline-heavy: #c8d1de;
+  --foreground: #0f172a;
+  --gloss: rgba(15, 23, 42, 0.05);
+  --gloss-strong: rgba(15, 23, 42, 0.085);
+  --overlay: rgba(15, 23, 42, 0.38);
+  --muted: #64748b;
+  --human: #7c3aed;
+  --human-ink: #4c1d95;
+  --chart-fuzzy: #c026d3;
+  --chart-ai: #5b21b6;
+  --scroll-thumb: #c3cbd8;
+  --scroll-thumb-hover: #aab4c4;
+
+  --lift-shadow: 0 14px 30px -18px rgba(15, 23, 42, 0.3);
+
+  --shimmer: rgba(15, 23, 42, 0.09);
+
+  /* Ambient backdrop */
+  --ambient-a: rgba(124, 58, 237, 0.09);
+  --ambient-b: rgba(16, 185, 129, 0.09);
+  --ambient-c: rgba(2, 132, 199, 0.08);
+  --ambient-dots: rgba(15, 23, 42, 0.03);
+
+  /* Semantic palette — darker values with ≥4.5:1 contrast on white */
+  --success: #15803d;
+  --warning: #b45309;
+  --critical: #be123c;
+  --info: #0369a1;
+  --source-bank: #1d4ed8;
+  --source-erp: #6d28d9;
+  --source-razorpay: #0e7490;
+
+  /* Inverted slate ramp.
+     The dark theme uses Tailwind's default slate scale with light text roles
+     (slate-200…600) and dark surface roles (slate-800/900). Light mode maps
+     those to their luminance-opposites so the same classes render correctly:
+     text roles darken, surface roles become pale washes. */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #0f172a;
+  --color-slate-200: #0f172a;
+  --color-slate-300: #1e293b;
+  --color-slate-400: #334155;
+  --color-slate-500: #475569;
+  --color-slate-600: #64748b;
+  --color-slate-700: #94a3b8;
+  --color-slate-800: #e2e8f0;
+  --color-slate-900: #e8ecf3;
+}
+
+/* Map theme variables to Tailwind color utilities (bg-canvas, text-foreground,
+   border-success/40, bg-gloss, text-human, …). */
+@theme inline {
+  --font-sans:
+    "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display:
+    "Space Grotesk Variable", "Space Grotesk", ui-sans-serif, system-ui,
+    "Segoe UI", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    "JetBrains Mono", "SFMono-Regular", ui-monospace, Menlo, Consolas,
+    monospace;
+
+  /* Text scale — one step up from Tailwind's defaults so real content reads
+     closer to a 16px base than a 12–14px floor. The fixed-pixel help text in
+     components follows via their own tokens, but everything using text-*
+     utilities scales from here. */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.21875rem;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.40625rem;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.59375rem;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.375rem;
+  --text-xl--line-height: 1.8125rem;
+  --text-2xl: 1.625rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 2.25rem;
+
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-hairline: var(--hairline);
+  --color-foreground: var(--foreground);
+  --color-gloss: var(--gloss);
+  --color-gloss-strong: var(--gloss-strong);
+  --color-overlay: var(--overlay);
+  --color-muted: var(--muted);
+  --color-human: var(--human);
+  --color-human-ink: var(--human-ink);
+  --color-chart-fuzzy: var(--chart-fuzzy);
+  --color-chart-ai: var(--chart-ai);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-critical: var(--critical);
+  --color-info: var(--info);
+
+  --color-source-bank: var(--source-bank);
+  --color-source-erp: var(--source-erp);
+  --color-source-razorpay: var(--source-razorpay);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-canvas);
+  /* Ambient depth: three faint colored glows + a whisper of dot grid so the
+     canvas never reads flat, but never competes with content. */
+  background-image:
+    radial-gradient(1100px 520px at 8% -12%, var(--ambient-a), transparent 62%),
+    radial-gradient(900px 480px at 94% -6%, var(--ambient-b), transparent 60%),
+    radial-gradient(820px 620px at 50% 112%, var(--ambient-c), transparent 60%),
+    radial-gradient(var(--ambient-dots) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    auto,
+    22px 22px;
+  background-attachment: fixed;
+  color: #dbe2ee;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv05" 1;
+}
+
+/* On light surfaces the base body text must flip with it. */
+[data-theme="light"] body {
+  color: var(--foreground);
+}
+
+::selection {
+  background-color: rgba(16, 185, 129, 0.28);
+  color: #f0fdf4;
+}
+[data-theme="light"] ::selection {
+  color: #052e16;
+}
+
+/* Thin, quiet scrollbars that belong to a dark product (equally quiet in light) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb);
+  border-radius: 9999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-hover);
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Numerals in financial data always align */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* One consistent micro-label treatment across every view — set in the
+   display face so section markers carry a little typographic identity,
+   while staying uppercase and quiet in size. */
+.microlabel {
+  font-family: var(--font-display);
+  font-size: 11px;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+}
+
+/* Quiet card hover — a breath of light on the border, a 1px lift, and a
+   soft depth shadow so interactive surfaces feel physical rather than flat. */
+.card-interactive {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+.card-interactive:hover {
+  border-color: var(--hairline-heavy);
+  transform: translateY(-2px);
+  box-shadow: var(--lift-shadow);
+}
+
+/* ── Motion system ────────────────────────────────────────────────
+   Single, quiet kinetic language: everything enters via a short rise
+   with a soft ease-out-expo curve. Reduced-motion users get none of it. */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slides-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-slides-down {
+  animation: slides-down 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes drawer-in {
+  from {
+    opacity: 0.3;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animate-drawer-in {
+  animation: drawer-in 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Skeleton shimmer — a travelling light edge over the base fill. */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, var(--shimmer), transparent);
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Brand mark — a slow breathing halo so the header has one living element. */
+@keyframes logo-breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 14px rgba(34, 197, 94, 0.22);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(34, 197, 94, 0.38);
+  }
+}
+.animate-logo-breathe {
+  animation: logo-breathe 3.2s ease-in-out infinite;
+}
+
+/* Live-dot for the activity feed — a soft recurring ping, dimmer than the
+   header health dot. */
+@keyframes live-ping {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.55;
+  }
+  70%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.animate-live-ping::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: live-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

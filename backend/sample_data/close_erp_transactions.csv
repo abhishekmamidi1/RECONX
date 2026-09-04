@@ -1,0 +1,19 @@
+invoice_no,txn_date,order_id,payment_ref,amount,tax,status,customer_code,description
+INV-2026-0901,2026-09-02,ord_Sep01,pay_cL9qW2mN0,5100.00,,paid,CUST-9001,
+INV-2026-0902,2026-09-02,ord_Sep02,pay_cL9qW2mN1,2775.00,,paid,CUST-9002,
+INV-2026-0903,2026-09-03,ord_Sep03,pay_cL9qW2mN2,9420.75,,paid,CUST-9003,
+INV-2026-0904,2026-09-04,ord_Sep04,pay_cL9qW2mN3,6350.00,,paid,CUST-9004,
+INV-2026-0905,2026-09-05,ord_Sep05,pay_cL9qW2mN4,15250.00,,paid,CUST-9005,
+INV-2026-0906,2026-09-06,ord_Sep06,pay_cL9qW2mN5,3280.40,,paid,CUST-9006,
+INV-2026-0907,2026-09-08,ord_Sep07,pay_cL9qW2mN6,11455.20,,paid,CUST-9007,
+INV-2026-0908,2026-09-09,ord_Sep08,pay_cL9qW2mN7,8640.50,,paid,CUST-9008,
+INV-2026-0909,2026-09-10,ord_Sep09,pay_cL9qW2mN8,1990.00,,paid,CUST-9009,
+INV-2026-0910,2026-09-11,ord_Sep10,pay_cL9qW2mN9,7200.00,,paid,CUST-9010,
+INV-2026-0911,2026-09-12,ord_SepF1,pay_fzQ3r8T5a,5800.00,,paid,CUST-9011,
+INV-2026-0912,2026-09-12,ord_SepF2,pay_fzQ3r8T5b,12100.00,,paid,CUST-9012,
+INV-2026-0913,2026-09-20,ord_SepS1,,4500.00,,paid,CUST-9013,Arvind Kumar Enterprises trade supplies for August billed under annual rate card
+INV-2026-0914,2026-09-21,ord_SepS2,,2495.00,,paid,CUST-9014,Platform credits settlement queue monthly subscription charge
+INV-2026-0915,2026-09-22,ord_SepR1,,1800.00,,REFUNDED,CUST-9015,
+INV-2026-0916,2026-09-23,ord_SepS3,,8000.00,,paid,CUST-9016,Spectra Logistics contracted dispatch services September freight premium
+INV-2026-0917,2026-09-26,ord_SepU1,,1880.00,,paid,CUST-9017,Backup generator maintenance AMC quarterly
+INV-2026-0918,2026-09-27,ord_SepU2,,990.00,,paid,CUST-9018,Office utilities invoice September handover

@@ -1,0 +1,5 @@
+settlement_id,settlement_date,payment_id,order_id,customer_ref,amount,fee,tax,credit_amount,status,method
+setl_MX9001,2026-08-20,pay_DemoRj01,,,1000.00,3.00,0.54,996.46,processed,
+setl_MX9001,NOT-A-DATE,pay_DemoRj02,,,2000.00,6.00,1.08,1992.92,processed,
+setl_MX9001,2026-08-21,pay_DemoRj03,,,3000.00,9.00,1.62,2989.38,processed,
+setl_MX9001,2026-08-22,pay_DemoRj04,,,4000.00,12.00,2.16,3985.84,processed,
